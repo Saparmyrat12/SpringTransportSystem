@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+</head>
+<body>
+<!--показываем имя и возрасть выбранного человека-->
+<p th:text="${transports.getModel() + ' ' + transports.getNumber()}">VALUE</p>
+<p th:text="${transports.getTransportId()()}">VALUE</p>
+
+<!--при нажати на делете мы удалим этого человека-->
+<form th:method="DELETE" th:action="@{/transports/{id}(id=${transports.getTransportId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+</body>
+</html>

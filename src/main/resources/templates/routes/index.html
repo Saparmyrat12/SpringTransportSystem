@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<!--исп forEach -->
+<div th:each="route : ${routes}">
+    <!--    ставим ссылку, вместе ид будет написано person.getId-->
+    <a th:href="@{/routes/{id}(id=${route.getRouteId()})}"
+       th:text="${route.getName()}">routes</a>
+    <!--       при нажати на имя и возрасть мы перейдем по выше указанной ссылке-->
+</div>
+
+<br/>
+<hr/>
+<!--ссылка на создание нового человека-->
+<a href="/routes/new">Create new routes</a>
+
+</body>
+</html>

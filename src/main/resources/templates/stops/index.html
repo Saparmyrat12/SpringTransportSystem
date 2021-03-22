@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<!--исп forEach -->
+<div th:each="stop : ${stops}">
+    <!--    ставим ссылку, вместе ид будет написано person.getId-->
+    <a th:href="@{/stops/{id}(id=${stop.getStopId()})}"
+       th:text="${stop.getName()+ ' ' + stop.getAddress()}">stop</a>
+    <!--       при нажати на имя и возрасть мы перейдем по выше указанной ссылке-->
+</div>
+
+<br/>
+<hr/>
+<!--ссылка на создание нового человека-->
+<a href="/stops/new">Create new stop</a>
+
+</body>
+</html>
